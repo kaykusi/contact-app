@@ -27,7 +27,7 @@ Route::get('/contacts/create', function () {
 
 Route::get('/contacts/{id}', function ($id) {
     return "Contacts " . $id;
-});
+})->where('id', '[0-9]+');
 
 Route::get('/companies/{name?}', function ($name = null) {
     if ($name) {
@@ -35,4 +35,4 @@ Route::get('/companies/{name?}', function ($name = null) {
     } else {
         return "All Companies";
     }
-});
+})->where('name', '[a-zA-Z]+',);
